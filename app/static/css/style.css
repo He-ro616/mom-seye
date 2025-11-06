@@ -1,0 +1,36 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  .chat-window {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .chat-window {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-body {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #chat-form .d-flex {
+    flex-direction: column;
+  }
+
+  #chat-form .form-control {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}

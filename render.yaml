@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: moms-eye-app
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false # Set this in Render dashboard
+      - key: API_KEY
+        sync: false # Set this in Render dashboard
+      - key: TWILIO_ACCOUNT_SID
+        sync: false # Set this in Render dashboard
+      - key: TWILIO_AUTH_TOKEN
+        sync: false # Set this in Render dashboard
+    # Note: users.json is currently used for user storage. For production,
+    # consider using a persistent database (e.g., PostgreSQL) and configuring
+    # a persistent disk for Render, or integrating with an external database service.
+    # The users.json file will not be persistent across deploys/restarts by default.
